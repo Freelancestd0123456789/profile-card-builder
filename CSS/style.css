@@ -1,0 +1,174 @@
+  
+ 
+ /* MOBILE FIRST */
+ .main {
+  font-family: Arial, sans-serif;
+  margin: 0;
+
+  background-image: url('../images/bc-image.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+   background-origin: border-box;
+  height: 100vh;
+  overflow: hidden; /* 🚀 STOP BODY SCROLL */
+
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+
+}
+
+/* CONTAINER */
+.container {display: flex; overflow-y: auto;  padding: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); background-color:#FFFFFF; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); border-radius: 14px 14px 14px 14px; position: relative;}
+
+.container::before { content: ""; position: absolute; top: 0; left: 0; height: 6px; width: 100%; background: linear-gradient(to right, crimson, #06B6D4); }
+
+/* FORM */
+form { padding: 20px; width: 50%;}
+ 
+
+.profile-info{text-align: center; width: 100%; color: crimson; font-size: 23px;}
+
+form fieldset { border: none; padding: 0; margin-top: 0px;}
+
+.input-fieldset{width: 100%; }
+
+.field-group{width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 10px 0px;}
+
+.field-group > div{width: 45%;}
+
+form fieldset label { display: inline-flex; align-items: center; margin-right: 15px; gap: 5px;cursor: pointer;}
+
+ form input, form textarea { width: 100%; /* ✅ default mobile */ padding: 8px;
+  margin-top: 5px; border: 1px solid #E2E8F0; border-radius: 8px; outline: none;
+  transition: 0.3s;}
+
+ 
+
+form input:focus,
+form textarea:focus {
+  border-color: #4F46E5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+/* BUTTON */
+form button { margin-top: 15px; padding: 12px; border: none; border-radius: 10px; background: crimson;; color: white; font-weight: bold; cursor: pointer; transition: 0.3s; }
+
+form button:hover {
+  background: #4338CA;
+}
+
+.skills-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+/* CARD */
+
+.card-container{padding: 25px;
+  width: 50%; border-radius: 0px 14px 14px 0px;
+   
+  text-align: center;
+ 
+  
+  position: relative;
+  overflow: hidden;}
+
+
+ 
+
+ 
+
+/* CHILD SELECTOR */
+.card > h2 {
+  color: crimson;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+/* CARD GRADIENT TOP BAR */ 
+
+
+/* ID overrides CLASS (specificity test) */
+#cardTitle {
+  color:  crimson;
+}
+
+/* DESCENDANT SELECTOR */
+.card .skills span {
+  display: inline-block;
+  background: #E0F2FE;
+  color: #0369A1;
+  padding: 6px 12px;
+  margin: 5px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+ .avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  background: gray;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ICON STYLE */
+.avatar i {
+  font-size: 30px;
+  color: white;
+}
+
+/* ERROR */
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+ 
+
+ @media only screen and (min-width: 300px) and (max-width: 767px) {
+
+  .container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  form {
+    width: 100%;
+    padding: 0;
+  }
+
+  .card-container {
+    width: 100%;
+    border-radius: 14px;
+    padding: 0;
+  }
+
+  .field-group {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  .field-group > div {
+    width: 100%;
+  }
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+    font-size: 18px;
+  }
+
+  .profile-info {
+    font-size: 18px;
+  }
+}

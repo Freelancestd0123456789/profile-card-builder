@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile Card Builder</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<main class="main"> 
+<div class="container">
+
+  <!-- LEFT PANEL -->
+  <form id="profileForm">
+    <fieldset class="input-fieldset">
+      <legend class="profile-info">Profile Info</legend>
+        <div class="field-group">
+            <div class=""> 
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required>
+            </div>
+            <div class=""> 
+      <label for="job">Job Title</label>
+      <input type="text" id="job" required>
+      </div>
+ </div>
+ <div class="field-group"> 
+    <div class=""> 
+      <label for="bio">Bio</label>
+      <textarea id="bio"></textarea>
+        </div>
+        <div class=""> 
+      <label for="color">Avatar Color</label>
+      <input  type="color" id="color" value="#3498db">
+</div>
+</div>
+      
+    </fieldset>
+    <fieldset>
+        <legend>Skills</legend>
+
+        <div class="skills-group">
+  <label><input type="checkbox" value="HTML"> HTML</label>
+  <label><input type="checkbox" value="CSS"> CSS</label>
+  <label><input type="checkbox" value="JavaScript"> JavaScript</label>
+  <label><input type="checkbox" value="React"> React</label>
+</div>
+      </fieldset>
+
+      <button type="submit">Generate Card</button>
+  </form>
+
+  <!-- RIGHT PANEL -->
+  <div class="card-container">
+    <div class="card" id="card">
+       <div class="avatar" id="avatar">
+  <i class="fa-solid fa-user"></i>
+</div>
+      <h2 id="cardTitle">Your Name</h2>
+      <p id="cardJob">Your Job</p>
+      <p id="cardBio">Your bio will appear here...</p>
+
+      <div class="skills" id="skills"></div>
+
+      <p class="error" id="error"></p>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<script src="JS/script.js"></script>
+</body>
+</html>
