@@ -1,18 +1,27 @@
-  
- 
- /* MOBILE FIRST */
- .main {
-  font-family: Arial, sans-serif;
+html,
+body {
   margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* MOBILE FIRST */
+.main {
 
   background-image: url('../images/bc-image.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
    background-origin: border-box;
-  height: 100vh;
-  overflow: hidden; /* 🚀 STOP BODY SCROLL */
+  min-height: 100vh;
 
+  width: 100%;
   display: flex;
   justify-content: center; /* horizontal center */
   align-items: center;     /* vertical center */
@@ -20,7 +29,7 @@
 }
 
 /* CONTAINER */
-.container {display: flex; overflow-y: auto;  padding: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); background-color:#FFFFFF; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); border-radius: 14px 14px 14px 14px; position: relative;}
+.container {display: flex; width: min(100%, 960px); max-width: 100%; padding: 20px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); background-color:#FFFFFF; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); border-radius: 14px 14px 14px 14px; position: relative;}
 
 .container::before { content: ""; position: absolute; top: 0; left: 0; height: 6px; width: 100%; background: linear-gradient(to right, crimson, #06B6D4); }
 
@@ -28,7 +37,7 @@
 form { padding: 20px; width: 50%;}
  
 
-.profile-info{text-align: center; width: 100%; color: crimson; font-size: 23px;}
+.profile-info{text-align: center; color: crimson; font-size: 23px;}
 
 form fieldset { border: none; padding: 0; margin-top: 0px;}
 
@@ -76,11 +85,6 @@ form button:hover {
   position: relative;
   overflow: hidden;}
 
-
- 
-
- 
-
 /* CHILD SELECTOR */
 .card > h2 {
   color: crimson;
@@ -107,22 +111,21 @@ form button:hover {
   font-size: 12px;
 }
 
- .avatar {
-  width: 80px;
-  height: 80px;
+/* AVATAR */
+.avatar {
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
-  margin: 0 auto 10px;
-  background: gray;
-
+  margin: 0 auto 15px;
+  background: linear-gradient(135deg, crimson, crimson);
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* ICON STYLE */
-.avatar i {
-  font-size: 30px;
   color: white;
+  font-weight: bold;
+  font-size: 24px;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 /* ERROR */
@@ -132,24 +135,38 @@ form button:hover {
   margin-top: 5px;
 }
 
- 
 
- @media only screen and (min-width: 300px) and (max-width: 767px) {
+ 
+ @media only screen and (max-width: 767px) {
+
+  .main {
+    min-height: auto;
+    align-items: flex-start;
+    padding: 16px 0;
+    overflow-x: hidden;
+  }
 
   .container {
     flex-direction: column;
+    width: calc(100% - 20px);
     padding: 10px;
   }
 
   form {
     width: 100%;
-    padding: 0;
+    padding: 20px 0px;
+    border-bottom: 1px solid gray;
   }
 
+  .skills-group {
+     
+    gap: 2px;
+}
   .card-container {
     width: 100%;
     border-radius: 14px;
-    padding: 0;
+    padding: 20px 0px;
+    
   }
 
   .field-group {
@@ -160,7 +177,13 @@ form button:hover {
 
   .field-group > div {
     width: 100%;
+    padding: 10px 0px;
   }
+
+  
+   .field-group:nth-of-type(2) > div:nth-child(2) {
+  width: auto;
+}
 
   .avatar {
     width: 70px;
@@ -171,4 +194,40 @@ form button:hover {
   .profile-info {
     font-size: 18px;
   }
+
+  form fieldset {padding: 10px 0px;}
+
+  form button {margin-top: 8px; padding: 10px;}
+}
+
+ @media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+  .container { width: calc(100% - 50px); padding: 15px;}
+
+       .main {
+        min-height: auto;
+        align-items: flex-start;
+        padding: 20px 0;
+         
+    }
+    /* .field-group > div:nth-child(2) { width: auto;} */
+
+    .field-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items:start;
+    
+}
+
+.field-group > div {
+    width: 100%;
+    padding: 8px 0px;
+}
+
+ .field-group:nth-of-type(2) > div:nth-child(2) {
+  width: auto;
+}
+
 }
